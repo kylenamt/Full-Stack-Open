@@ -16,12 +16,13 @@ const Part = (p) => {
   );
 };
 
-const Content = (p) => {
+const Content = (prop) => {
+  const p = prop.parts;
   return (
     <>
-      <Part name={p.parts[0].name} exercises={p.parts[0].exercises} />
-      <Part name={p.parts[1].name} exercises={p.parts[1].exercises} />
-      <Part name={p.parts[2].name} exercises={p.parts[2].exercises} />
+      <Part name={p[0].name} exercises={p[0].exercises} />
+      <Part name={p[1].name} exercises={p[1].exercises} />
+      <Part name={p[2].name} exercises={p[2].exercises} />
     </>
   );
 };
@@ -31,9 +32,7 @@ const Total = (p) => {
     <>
       <p>
         Number of exercises{" "}
-        {p.parts[0].exercises +
-          p.parts[1].exercises +
-          p.parts[2].exercises}
+        {p.parts[0].exercises + p.parts[1].exercises + p.parts[2].exercises}
       </p>
     </>
   );
